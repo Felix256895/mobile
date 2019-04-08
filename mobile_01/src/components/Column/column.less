@@ -1,0 +1,57 @@
+.columnBox {
+    a {
+        display: flex;
+        height: 2.2rem;
+        margin: 0 0.4rem;
+        border-bottom: 1px solid #ddd;
+
+        .itemImg {
+            flex-grow: 1;
+            align-self: center;
+            flex-shrink: 1;
+
+            img {
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+        }
+
+        .introduce {
+            flex-grow: 2;
+            margin-left: 0.4rem;
+            padding: 0.266rem;
+
+            h4 {
+                font-size: 0.4rem;
+                font-weight: normal;
+                color: #333;
+            }
+
+            p {
+                height: 1rem;
+                line-height: 0.55rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: 0.35rem;
+                color: #666;
+            }
+        }
+
+        .rightArrow {
+            flex-grow: 1;
+            align-self: center;
+
+            img {
+                width: 0.7rem;
+                height: 0.7rem;
+                background-size: 100% 100%;
+                vertical-align: middle;
+            }
+        }
+    }
+}
