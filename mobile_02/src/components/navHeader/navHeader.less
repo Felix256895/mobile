@@ -1,0 +1,52 @@
+@import '../../style/mixin.less';
+
+.header_container{
+    .wh(100%,88px);
+    .flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: @base-color;
+    .header_slider_icon{
+        .positionLeft;
+        .wh(45px,45px);
+        background: url("../../assets/images/array.svg") no-repeat;
+        background-size: 100% 100%;
+    }
+    &>a{
+        .positionRight;
+        .wh(45px,45px);
+        &.header_home_icon{
+            background: url("../../assets/images/advance.svg") no-repeat;
+            background-size: 100% 100%;
+        }
+        &.header_record_icon{
+            background: url("../../assets/images/record.svg") no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+    .nav_slider_list{
+        .coverScreen(fixed);
+        top:88px;
+        display: flex;
+        flex-direction: column;
+        .nav_link{
+            .font(32px);
+            border-bottom: 1px solid #ddd;
+            margin: 0 @common-wd;
+            padding: 35px 20px;
+            position: relative;
+            &:before{
+                position: absolute;
+                right: 10px;
+                content:'';
+                .wh(40px,40px);
+                background: url("../../assets/images/advance.svg") no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+
+    
+}
