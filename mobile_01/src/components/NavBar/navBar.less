@@ -1,0 +1,70 @@
+@width:1.173rem;
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    .headerItem1{
+        display: flex;
+        justify-content:space-between;
+        height:@width;
+        align-items: center;
+        background: rgba(0,0,0,.7);
+        padding: 0 0.32rem;
+        .appLogo{
+            display: flex;
+            align-items: center;
+            img{
+                width: 0.746rem;
+                width: 0.746rem;
+                border-radius: 8px;
+                vertical-align: middle;
+            }
+            span{
+                margin-left: 0.2rem;
+                color:#fff;
+                font-size: 0.35rem;
+            }
+        }
+        .download{
+            display: flex;
+            width: 2.08rem;
+            height:0.72rem;
+            justify-content: center;
+            align-items: center;
+            border:2px solid #fff;
+            color:#fff;
+            font-size: 0.4rem;
+            border-radius: 8px;
+        }
+    }
+    .headerItem2{
+        height:@width;
+        display: flex;
+        align-items: center;
+        padding: 0 0.266rem;
+        background-color: #e7e7e7;
+        a{
+            flex-grow:1;
+            &:first-child{
+                text-align: left;
+                img{
+                    width: 0.586rem;
+                } 
+            }
+            &:nth-child(2){
+                text-align: center;
+                font-size: 0.46rem;
+            }
+            &:last-child{
+                text-align: right;
+                img{
+                    width: 0.586rem;
+                } 
+            }
+        }
+        .logo{
+            height: 0.8rem;
+        }
+    }
+}

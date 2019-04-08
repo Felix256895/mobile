@@ -1,0 +1,68 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header .headerItem1 {
+  display: flex;
+  justify-content: space-between;
+  height: 1.173rem;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0 0.32rem;
+}
+.header .headerItem1 .appLogo {
+  display: flex;
+  align-items: center;
+}
+.header .headerItem1 .appLogo img {
+  width: 0.746rem;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+.header .headerItem1 .appLogo span {
+  margin-left: 0.2rem;
+  color: #fff;
+  font-size: 0.35rem;
+}
+.header .headerItem1 .download {
+  display: flex;
+  width: 2.08rem;
+  height: 0.72rem;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 0.4rem;
+  border-radius: 8px;
+}
+.header .headerItem2 {
+  height: 1.173rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.266rem;
+  background-color: #e7e7e7;
+}
+.header .headerItem2 a {
+  flex-grow: 1;
+}
+.header .headerItem2 a:first-child {
+  text-align: left;
+}
+.header .headerItem2 a:first-child img {
+  width: 0.586rem;
+}
+.header .headerItem2 a:nth-child(2) {
+  text-align: center;
+  font-size: 0.46rem;
+}
+.header .headerItem2 a:last-child {
+  text-align: right;
+}
+.header .headerItem2 a:last-child img {
+  width: 0.586rem;
+}
+.header .headerItem2 .logo {
+  height: 0.8rem;
+}

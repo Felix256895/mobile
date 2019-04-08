@@ -1,0 +1,253 @@
+.vip {
+    .title {
+        color: #000;
+        font-size: 0.45rem;
+        text-align: center;
+        margin-bottom: 0.4rem;
+    }
+    .vipSection {
+        background: #fff;
+        margin-bottom: 0.266rem;
+
+        .vipInfo {
+            padding: 0.266rem 0.4rem 0 0.4rem;
+        }
+
+        .vipBanner {
+            display: flex;
+            height: 2.16rem;
+            background: url("../../assets/images/vip-banner.png") no-repeat;
+            background-size: 100% 100%;
+            border-radius: 0.15rem;
+            padding: 0 0.4rem;
+
+            a {
+                display: flex;
+                color: #fff;
+                align-items: center;
+            }
+
+            .avatar {
+                width: 1.28rem;
+                height: 1.28rem;
+                margin-right: 0.266rem;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+            }
+
+            .status {
+                p {
+                    font-size: 0.35rem;
+                    line-height: 0.6rem;
+
+                    &:first-of-type {
+                        font-size: 0.4rem;
+                    }
+                }
+            }
+        }
+
+        .vipBoon {
+            padding: 0.666rem 0;
+
+            .category {
+                display: flex;
+                justify-content: space-around;
+
+                div {
+                    text-align: center;
+
+                    img {
+                        width: 1.6rem;
+                        border-radius: 50%;
+                    }
+
+                    p {
+                        font-size: 0.35rem;
+                        margin: 0.1rem 0;
+                    }
+                }
+            }
+
+            .vipOpen {
+                margin: 0.533rem 0.4rem 0;
+
+                a {
+                    display: flex;
+                    width: 100%;
+                    height: 1.06rem;
+                    color: #4c3b1e;
+                    border-radius: 1rem;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.4rem;
+                    background-image: linear-gradient(90deg, #d9bc82, #e6dab8);
+                    box-shadow: 0 5px 10px 0 hsla(41, 51%, 72%, .16);
+
+                    i {
+                        width: 10px;
+                        height: 10px;
+                        background: #4c3b1e;
+                        border-radius: 50%;
+                        margin: 0 10px;
+                    }
+                }
+
+                p {
+                    text-align: center;
+                    font-size: 0.35rem;
+                    margin-top: 0.266rem;
+                }
+            }
+        }
+    }
+    .vipModule{
+        background: #fff;
+        padding: 0.666rem 0.4rem;
+        margin-bottom: 0.266rem;
+        .vipEnjoy{
+            li{
+                display: flex;
+                height: 1.38rem;
+                justify-content: center;
+                align-items: center;
+                color:#4c3b1e;
+                font-size: 0.35rem;
+                border-bottom:1px solid #d9bc82;
+                
+                &:first-child{
+                    height: 1.06rem;
+                    line-height: 1.06rem;
+                    background: #d9bc82;
+                    div{
+                        flex-grow: 1;
+                        text-align:center;
+                        &:first-child{
+                            width: 35%;
+                        }
+                    }
+                }
+                &:not(:first-child){
+                    div{
+                        height: 100%;
+                        flex-grow: 1;
+                        text-align:center;
+                        box-sizing: border-box;
+                        align-self:center;
+                        border-left: 1px solid #d9bc82;
+                        padding: 0.45rem 0;
+                        &:first-child{
+                            padding: 0.2rem 0;
+                            width: 19%;
+                        }
+                        &:last-child{
+                            border-right: 1px solid #d9bc82;
+                        }
+                        img{
+                            width: 0.533rem;
+                        }
+                    }
+                }
+            }
+        }
+        .text{
+            margin-top: 0.4rem;
+            color:#666;
+            font-size: 0.32rem;
+        }
+        .prompt{
+            font-size: 0.4rem;
+            color:#666;
+            margin-bottom: 0.4rem;
+        }
+    }
+    .ticket{
+        display: flex;
+        margin-bottom: 0.4rem;
+        align-items: center;
+        background-image: linear-gradient(90deg,#d9bc82,#e6dab8);
+        border-radius: 0.15rem;
+        .ticketLeft{
+            flex-grow: 1;
+            padding: 0 0.373rem 0 0.533rem;
+            &>div:first-child{
+                color: #4c3b1e;
+                font-size: 0.45rem;
+            }
+            .price{
+                display: flex;
+                color:#fff;
+                margin-top: 0.2rem;
+                align-items: center;
+                &>div {
+                flex-grow: 1;
+                font-size: 0.4rem;
+
+                &:first-child {
+                    font-size: 0.65rem;
+
+                    span {
+                        font-size: 1.41rem;
+                    }
+                }
+            }
+            }
+        }
+        .ticketRight{
+            width: 28%;
+            height: 3.413rem;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#fff;
+            border-top-right-radius: 0.15rem;
+            border-bottom-right-radius: 0.15rem;
+            span{
+                width: 1.6rem;
+                font-size: 0.753rem;
+            }
+        }
+    }
+    .privBox{
+        padding: 0.4rem;
+        li{
+            display: flex;
+            justify-content: space-between;
+            height: 0.8rem;
+            align-items: center;
+            font-size: 0.4rem;
+        }
+    }
+
+
+
+
+
+
+    .vipFooter {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #f9f9f9;
+        padding: 5px 0;
+
+        a {
+            display: flex;
+            height: 1.06rem;
+            color: #4c3b1e;
+            border-radius: 1rem;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.4rem;
+            background: linear-gradient(90deg, #a0784e, #d2ad83);
+            margin: 0 0.4rem;
+            color: #fff;
+        }
+    }
+}
