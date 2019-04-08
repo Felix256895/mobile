@@ -6,7 +6,7 @@ class home extends Component {
     render() {
         return (
             <div>
-                <NavHeader />
+                <NavHeader title='首页' record />
             </div>
         );
     }

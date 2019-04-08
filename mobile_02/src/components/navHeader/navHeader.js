@@ -9,8 +9,6 @@ class NavHeader extends Component {
     constructor(props){
         super(props);
         this.state={
-            record:true,
-            home:false,
             navState:false,
         }
     }
@@ -21,15 +19,16 @@ class NavHeader extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <header className={styles.header_container} >
                 <span className={styles.header_slider_icon} onClick={this.toggleNav} ></span>
-                <span className={styles.header_title} >首页</span>
+                <span className={styles.header_title} >{this.props.title}</span>
                 {
-                    this.state.record&&<NavLink to='/record' className={styles.header_record_icon} />
+                    this.props.record&&<NavLink to='/record' className={styles.header_record_icon} />
                 }
                 {
-                    this.state.home&&<NavLink to='/' className={styles.header_home_icon} />
+                    this.props.confirm&&<NavLink to='/' className={styles.header_home}>确认</NavLink>
                 }
                 {this.state.navState&&<aside className={styles.nav_slider_list} onClick={this.toggleNav}>
                     <NavLink to="/" exact className={styles.nav_link}>首页</NavLink>

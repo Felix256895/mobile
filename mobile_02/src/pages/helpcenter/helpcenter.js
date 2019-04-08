@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import NavHeader from '@/components/navHeader/navHeader';
 
 class helpcenter extends Component {
     render() {
         return (
             <div>
-                helpcenter
+                <NavHeader title='帮助中心' />
             </div>
         );
     }
