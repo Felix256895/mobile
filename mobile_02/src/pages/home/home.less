@@ -1,1 +1,61 @@
 @import '../../style/mixin.less';
+.home_container{
+    padding-top: 88px;
+    .common_title{
+        .font(36px,@base-color);
+        padding: 30px;
+    }
+    .home_form{
+        background-color: #fff;
+        .home_form_item{
+            height: 120px;
+            line-height: 120px;
+            border-bottom:1px solid #eee;
+            label{
+                .font(32px,#555);
+                margin-left: 30px;
+                margin-right: 20px;
+            }
+            input{
+                border:none;
+                font-size: 30px;
+            }
+            ::-webkit-input-placeholder{
+                color:#ccc;
+            }
+        }
+    }
+    .common_select_btn{
+        min-height: 120px;
+        display: block;
+        background-color: #fff;
+        .font(42px,#ccc,center);
+        .flex;
+        .select_list{
+            .flex();
+            flex-wrap: wrap;
+            .select_item{
+                width: 340px;
+                margin: 10px;
+                line-height: 50px;
+                .font(32px,@text-align:center);
+            }
+        }
+    }
+    .upload_img{
+        text-align: center;
+        .file_label{
+            position: relative;
+            input[type='file']{
+                position: absolute;
+                .wh(100%,100%);
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+        }
+        .select_img{
+            margin-top: 10px;
+        }
+    }
+}
