@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import envconfig from '@/envconfig/envconfig';
+import { saveFormData,saveImg,clearData } from '@/store/home/action';
 import NavHeader from '@/components/navHeader/navHeader';
 import TouchEvent from '@/components/touchEvent/touchEvent';
 import Alert from '@/components/alert/alert';
@@ -11,25 +14,51 @@ class home extends Component {
         this.state={
             selectList:[],
             alertStatus:false,
-            alertConttext:'',
+            alertContext:'',
         }
+    }
+    handleInput=(type,event)=>{
+        let val=event.target.value;
+        switch(type){
+            case 'orderSum' :
+                val=val.replace(/\D/g,'');
+                break;
+            case 'name' :
+                break;
+            case 'phoneNo' :
+                val=val.replace(/\D/g,'');
+                break;
+        }
+        this.props.saveFormData(val,type);
     }
 
     //提交
     submitForm=()=>{
+        const {orderSum,name,phoneNo}=this.props.formData;
+        let alertContext;
+        if(!orderSum.toString().length){
+            alertContext='请填写金额';
+        }else if(!name.toString().length){
+            alertContext='请填写姓名';
+        }else if(!phoneNo.toString().length){
+            alertContext='请填写正确的手机号';
+        }else{
+            alertContext='添加数据成功';
+        }
         this.setState({
             alertStatus:true,
-            alertConttext:'请输入订单金额'
+            alertContext,
         })
     }
     //关闭弹窗
     closeAlert=()=>{
         this.setState({
             alertStatus:false,
-            alertConttext:''
+            alertContext:''
         })
     }
     render() {
+        const { orderSum,name,phoneNo }=this.props.formData;
         return (
             <main className={styles.home_container} >
                 <NavHeader title='首页' record />
@@ -37,15 +66,15 @@ class home extends Component {
                 <form className={styles.home_form} >
                     <div className={styles.home_form_item}>
                         <label>销售金额：</label>
-                        <input type="text" placeholder='请输入订单金额' />
+                        <input type="text" value={orderSum} onChange={this.handleInput.bind(this,'orderSum')} placeholder='请输入订单金额' />
                     </div>
                     <div className={styles.home_form_item}>
                         <label>客户名称：</label>
-                        <input type="text" placeholder='请输入客户名称' />
+                        <input type="text" value={name} onChange={this.handleInput.bind(this,'name')} placeholder='请输入客户名称' />
                     </div>
                     <div className={styles.home_form_item}>
                         <label>客户电话：</label>
-                        <input type="text" maxLength='13' placeholder='请输入客户电话' />
+                        <input type="text" value={phoneNo} onChange={this.handleInput.bind(this,'phoneNo')} maxLength='13' placeholder='请输入客户电话' />
                     </div>
                 </form>
                 <div>
@@ -77,4 +106,12 @@ class home extends Component {
     }
 }
 
-export default home;
+export default connect(state=>({
+    formData:state.formData
+}),
+{
+    saveFormData,
+    saveImg,
+    clearData
+}
+)(home);

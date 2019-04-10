@@ -14,12 +14,12 @@ class alert extends Component {
     }
 
     render() {
-        const {alertStatus, alertConttext,} = this.props;
+        const {alertStatus, alertContext,} = this.props;
         return (
             <div>
                 {alertStatus && <div className={styles.alert_container}>
                     <div className={styles.alert_context}>
-                        <div className={styles.context_item}>{alertConttext}</div>
+                        <div className={styles.context_item}>{alertContext}</div>
                         <a className={styles.alert_btn} onTouchEnd={this.handleConfirm}>确认</a>
                     </div>
                 </div>}
