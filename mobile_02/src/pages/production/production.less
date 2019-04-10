@@ -1,0 +1,50 @@
+@import '../../style/mixin.less';
+
+.pro_list_con{
+    padding-top: 88px;
+}
+.pro_list_ul{
+    background-color: #fff;
+    .pro_item{
+        min-height: 140px;
+        padding: @common-wd;
+        border-bottom: 1px solid #eee;
+        .flex(space-between);
+        .pro_item_select{
+            .flex;
+            span:nth-of-type(1){
+                .wh(50px,50px);
+            }
+            .select_true{
+                .urlImage('select.svg');
+            }
+            .select_false{
+                .urlImage('unselect.svg');
+            }
+            .pro_name{
+                .font(36px);
+                margin-left: 20px;
+            }
+        }
+        .pro_item_edit{
+            .flex;
+            .pro_add{
+                .wh(50px,50px);
+                .urlImage('add.svg');
+            }
+            .pro_num{
+                .font(30px,@text-align:center);
+                min-width: 60px;
+            }
+            span:nth-of-type(1){
+                .wh(50px,50px);
+            }
+            .pro_subtract{
+                .urlImage('subtract.svg');
+            }
+            .pro_defalut{
+                .urlImage('subtractDefalut.svg');
+            }
+        }
+    }
+}

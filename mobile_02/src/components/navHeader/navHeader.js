@@ -19,7 +19,6 @@ class NavHeader extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <header className={styles.header_container} >
                 <span className={styles.header_slider_icon} onClick={this.toggleNav} ></span>

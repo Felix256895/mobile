@@ -1,1 +1,25 @@
 @import '../../style/mixin.less';
+.alert_container{
+    .coverScreen(fixed,rgba(0,0,0,.3));
+    z-index: 11;
+    .alert_context{
+        .positionCenter;
+        z-index: 12;
+        .wh(600px,360px);
+        background-color: #fff;
+        border-radius: 16px;
+        .flex(@align-items: stretch);
+        flex-direction: column;
+        .context_item{
+            flex: 5;
+            .flex;
+            .font(40px);
+        }
+        .alert_btn{
+            flex:2;
+            .flex;
+            .font(40px);
+            border-top: 1px solid #eee;
+        }
+    }
+}
