@@ -11,7 +11,7 @@ class qrcode extends Component {
     render() {
         return (
             <main>
-                 <NavHeader title='首页' record />
+                 <NavHeader title='二维码' record />
                 <section className={styles.qrcode_box}>
                     <div>
                         <QRCode 
