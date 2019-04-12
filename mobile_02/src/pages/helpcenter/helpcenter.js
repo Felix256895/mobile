@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { is, fromJS} from 'immutable';
-
 import NavHeader from "@/components/navHeader/navHeader";
 import styles from './helpcenter.less';
 
@@ -21,19 +20,19 @@ class helpcenter extends Component {
             之间的配合方式
           </p>
           <h2>技术要点</h2>
-          <p>react：v16.2</p>
-          <p>redux：v3.7</p>
-          <p>webpack：v3.8</p>
-          <p>react-router：v4.2</p>
+          <p>react：v16.7</p>
+          <p>redux：v6.0</p>
+          <p>webpack：v4.19.1</p>
+          <p>react-router-dom：v4.3.1</p>
           <p>ES 6/7/8</p>
           <p>code split</p>
           <p>hot loader</p>
-          <p>axios：v0.17</p>
-          <p>less：v2.7</p>
-          <p>immutable：v3.8</p>
+          <p>axios：v0.18</p>
+          <p>less：v3.9</p>
+          <p>immutable：v4.0</p>
           <p>
             项目地址{" "}
-            <a href="https://github.com/bailicangdu/react-pxq">github</a>
+            <a href="https://github.com/clear-source/mobile/tree/master/mobile_02" target="_blank">github</a>
           </p>
         </article>
       </main>

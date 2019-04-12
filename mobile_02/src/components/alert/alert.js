@@ -6,7 +6,9 @@ import styles from './alert.less';
 class alert extends Component {
 
     handleConfirm=()=>{
-        this.props.closeAlert();
+        setTimeout(()=>{
+            this.props.closeAlert();
+        },300);
     }
 
     shouldComponentUpdate(nextPorps,nextState){

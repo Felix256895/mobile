@@ -1,0 +1,38 @@
+@import '../../../style/mixin.less';
+
+.record_list {
+    .record_item {
+        background-color: #fff;
+        margin-top: 20px;
+
+        .record_item_header {
+            .flex(@justify-content: space-between);
+            height: 100px;
+            padding: 0 20px;
+            border-bottom: 1px solid #eee;
+
+            span:nth-of-type(1) {
+                .font(30px, #999);
+            }
+
+            span:nth-of-type(2) {
+                .font(36px, @base-red);
+            }
+
+        }
+
+        .record_item_content {
+            padding: 20px;
+
+            p {
+                .font(30px, #000);
+                line-height: 50px;
+            }
+        }
+        .record_item_footer{
+            padding: 20px;
+            .font(28px,#000);
+            border-top:1px solid #eee;
+        }
+    }
+}

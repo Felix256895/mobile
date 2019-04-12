@@ -32,6 +32,7 @@ class NavHeader extends Component {
                 {this.state.navState&&<aside className={styles.nav_slider_list} onClick={this.toggleNav}>
                     <NavLink to="/" exact className={styles.nav_link}>首页</NavLink>
                     <NavLink to="/balance"  className={styles.nav_link}>提现</NavLink>
+                    <NavLink to="/qrcode"  className={styles.nav_link}>二维码</NavLink>
                     <NavLink to="/helpcenter"  className={styles.nav_link}>帮助中心</NavLink>
                 </aside>}
             </header>
