@@ -3,6 +3,7 @@ import { is, fromJS } from 'immutable';
 import NavHeader from '@/components/navHeader/navHeader';
 import TouchEvent from '@/components/touchEvent/touchEvent';
 import Alert from '@/components/alert/alert';
+import API from '@/api/api';
 import styles from './balance.less';
 
 class balance extends Component {
@@ -12,7 +13,18 @@ class balance extends Component {
             alertStatus:false,
             alertContext:'',
             money:'',
-            balance:60,
+            balance:0,
+        }
+    }
+
+    //获取请求数据
+    initData=async()=>{
+        try{
+            let result=await API.getBalance();
+            console.log(result);
+            this.setState({balance:result.balance});
+        }catch(err){
+            console.log(err)
         }
     }
 
@@ -64,6 +76,9 @@ class balance extends Component {
             alertStatus:false,
             alertContext:''
         })
+    }
+    componentDidMount(){
+        this.initData();
     }
 
     shouldComponentUpdate(nextProps,nextState){

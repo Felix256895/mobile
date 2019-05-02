@@ -1,0 +1,46 @@
+@import '../../style/mixin.less';
+
+.record_container {
+    padding-top: 88px;
+
+    .record_section {
+        height: 110px;
+        position: relative;
+
+        .record_nav {
+            height: 100%;
+            .flex;
+            background-color: #fff;
+
+            .nav_link {
+                .font(@font-size: 36px, @text-align: center);
+                height: 60px;
+                line-height: 60px;
+                flex: 1;
+                transition: color 300ms;
+            }
+
+            a:nth-of-type(1),
+            a:nth-of-type(2) {
+                border-right: 1PX solid #ddd;
+            }
+
+            :global {
+                .active {
+                    color: @base-color;
+                }
+            }
+        }
+
+        .nav_flag_bar {
+            position: absolute;
+            bottom: 0;
+            left: 17%;
+            .wh(130px, 4PX);
+            border-radius: 2PX;
+            background-color: @base-color;
+            margin-left: -65px;
+            transition: left 300ms;
+        }
+    }
+}
