@@ -9,14 +9,20 @@
         <form class="login-form">
             <div class="login-form-input">
                 <span class="login-input-title">账号</span>
-                <input type="text" name="userName" placeholder="请输入账号">
+                <input type="text" class="login-input-item" name="userName" placeholder="请输入账号">
             </div>
-            <div class="login-form-input">
+            <div  v-if='verify===true' class="login-form-input">
                 <span class="login-input-title">密码</span>
-                <input type="password" name="password" placeholder="请输入密码">
+                <input type="password" class="login-input-item" name="password" placeholder="请输入密码">
+            </div>
+            <div  v-if='verify===false' class="login-form-input">
+                <span class="login-input-title">验证码</span>
+                <input type="text" class="login-input-item" name="" placeholder="请输入验证码">
+                <a class="login-verification">获取验证码</a>
             </div>
             <div class="login-form-item">
-                <a class="login-verify">验证码登录</a>
+                <a v-if='verify===true' @click='handleVerifyChange' class="login-verify">验证码登录</a>
+                <a v-if='verify===false' @click='handleVerifyChange' class="login-verify">使用密码登录</a>
                 <router-link class="login-verify" to='/forgetpassword'>忘记密码</router-link>
             </div>
             <div class="login-btn">
@@ -33,6 +39,8 @@ export default {
     },
     data:()=>({
         wrapperHeight: 0,  // 页面总高
+        verify:true,
+
     }),
     mounted(){
         // 计算高度
@@ -40,7 +48,12 @@ export default {
             this.wrapperHeight =`${document.documentElement.clientHeight}` -this.$refs.wrapper.getBoundingClientRect().top;
         };
         this.wrapperHeight =`${document.documentElement.clientHeight}`- this.$refs.wrapper.getBoundingClientRect().top;
-   
+        
+   },
+   methods:{
+       handleVerifyChange(e){
+          this.verify=!this.verify;
+        }
    },
 
 }
@@ -68,13 +81,19 @@ export default {
                 background $color-background-fff
                 font-size $font-size-26
                 .login-input-title
+                    width 120px
                     padding-left 20px
-                    padding-right 50px
-                input[name='userName']
+                    display inline-block
+                .login-input-item
                     height 100px
                     flex 1
-                    border-bottom 1PX solid #ddd
                     background transparent
+                input[name='userName']
+                    border-bottom 1PX solid #ddd
+                .login-verification
+                    color $color-text-FB6334
+                    padding 10px 20px
+                    border-left 1PX solid #ddd
             .login-btn
                 margin-top 50px
                 text-align center
@@ -82,7 +101,7 @@ export default {
                     width 90%
                     height 100px
                     border none 
-                    background $color-background-FB6334
+                    background #FFA07A
                     color $color-text-ffffff
                     font-size $font-size-30
                     border-radius 4PX
