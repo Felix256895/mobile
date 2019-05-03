@@ -33,6 +33,7 @@ class record extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
     let currenType = this.props.location.pathname.split("/")[2];
     let type = nextProps.location.pathname.split("/")[2];
     if (currenType !== type) {
