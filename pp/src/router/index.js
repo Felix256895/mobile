@@ -125,6 +125,17 @@ const router = new Router({
         require(["@/html/account/forgetPassword/index"], resolve);
       }
     },
+    //协议
+    {
+      path: "/agreement",
+      name: "agreement",
+      meta: {
+        requireAuth: false
+      },
+      component: resolve => {
+        require(["@/html/account/agreement/index"], resolve);
+      }
+    },
   ]
 });
 

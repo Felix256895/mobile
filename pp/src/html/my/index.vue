@@ -11,7 +11,7 @@
             <div class="upload" @click="upload">
                 <i class="icon-my icon-font "></i>
             </div>
-            <router-link to='/login' class="login" >登录 / 注册</router-link>
+            <router-link to='/login' class="my-login" >登录 / 注册</router-link>
         </div>
         <div class="my-order" @click='handleOrder'>
             <span>我的购药订单</span>
@@ -212,7 +212,7 @@ export default {
             .icon-font
                 font-size 47px
                 display inline-block
-            .login
+            .my-login
                 font-size 30px
                 color #fff
                 margin-left $font-size-25
