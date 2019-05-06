@@ -21,7 +21,9 @@
                 <div class="trolley-popular">
                     <div class="trolley-popular-title">
                         <i class="title-left"></i>
+                        <b class="diamond-icon"></b>
                         <span>热门推荐</span>
+                        <b class="diamond-icon"></b>
                         <i class="title-right"></i>
                     </div>
                     <tab-list />
@@ -33,7 +35,7 @@
                 <p>合计：<span>¥0.00</span></p>
                 <p>不含运费</p>
             </div>
-            <a class="trolley-footer-button" >提交需求</a>
+            <router-link to='/confirm-order' class="trolley-footer-button" >提交需求</router-link>
         </footer>
         <tab-bar subscript='1'></tab-bar>
     </div>
@@ -92,8 +94,15 @@ export default {
         width 100%
         box-sizing border-box
         height 100%
-        overflow-x scroll
+        overflow-y scroll
         background $color-background
+        -webkit-overflow-scrolling touch 
+        &::-webkit-scrollbar 
+            display none
+        &::-moz-scrollbar 
+            display none 
+        &::-ms-scrollbar 
+            display none  
         .icon-font
             display flex
             padding-right 20px
@@ -112,10 +121,16 @@ export default {
             margin 0 10px
             font-size 20px
         .van-checkbox
-            overflow inherit
-        .van-icon
-        .van-icon:before
-            display inline
+            height 30px
+        .van-checkbox__icon
+            height 30px
+        .van-checkbox__icon
+        .van-checkbox__label
+            line-height 30px
+        .van-checkbox__icon .van-icon
+            width 30px
+            height 30px
+            font-size 24px
         .trolley-footer
             position fixed
             bottom 101px
@@ -181,5 +196,23 @@ export default {
                     .title-right  
                         width 100px
                         border 0.5PX solid $color-text-FB6334
+                        margin 0 10px
+                .diamond-icon
+                    width 0
+                    height 0
+                    border 10px solid transparent
+                    border-bottom-color $color-text-FB6334
+                    position relative
+                    top -10px
+                .diamond-icon:after
+                    content ''
+                    position absolute
+                    left -10px
+                    top 10px
+                    width 0
+                    height 0
+                    border 10px solid transparent
+                    border-top-color $color-text-FB6334
+
 
 </style>

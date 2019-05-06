@@ -92,6 +92,17 @@ const router = new Router({
         require(["@/html/order/index"], resolve);
       }
     },
+    //确认订单
+    {
+      path: "/confirm-order",
+      name: "confirm-order",
+      meta: {
+        requireAuth: false
+      },
+      component: resolve => {
+        require(["@/html/trolley/confirmOrder/index"], resolve);
+      }
+    },
     //登录
     {
       path: "/login",
