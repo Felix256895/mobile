@@ -26,8 +26,13 @@ export default {
         display flex
         align-items center
         justify-content space-between
+        box-sizing border-box
         .my-footer-text
             padding-left 30px
+            border-top 1PX solid #ddd
+            height 80px
+            line-height 80px
+            flex 1
             .footer-total
                 color $color-text-FB6334
         .confirm-btn

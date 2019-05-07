@@ -23,17 +23,38 @@
                     <i class="icon-y-j-t icon-font"></i>
                 </div>
             </div>
+            <div class="order-list">
+                <div class="order-default">
+                    <span class="title">默认处包方</span>
+                    <span class="multiple">x1</span>
+                </div>
+                <my-list></my-list>
+            </div>
+            <div class="section-pint">
+                需求单中有处方药，将由药店凭处方送达或者货到付款
+            </div>
+            <my-delivery></my-delivery>
+            <div class="section-footer">
+                <div class="section-footer-total">
+                    共 <span>1</span> 件商品 合计 <span>¥ 13.30</span>
+                </div>
+                <div class="section-footer-pint" >(请尽快交付备货保证金，否则需求单将在30分钟后自动关闭)</div>
+            </div>
         </section>
         <my-footer></my-footer>
     </div>
 </template>
 <script>
 import NavTab from "@/components/NavTab";
-import MyFooter from './myFooter';
+import MyList from "./components/myList";
+import MyDelivery from "./components/myDelivery";
+import MyFooter from './components/myFooter';
 export default {
     components:{
         NavTab,
         MyFooter,
+        MyList,
+        MyDelivery,
     },
     data:()=>({
          wrapperHeight: 0,  // 页面总高
@@ -61,6 +82,12 @@ export default {
         overflow-y scroll
         background-color $color-background
         -webkit-overflow-scrolling touch
+        &::-webkit-scrollbar 
+            display none
+        &::-moz-scrollbar 
+            display none 
+        &::-ms-scrollbar 
+            display none  
         .confirm-order-section
             padding-top 110px
             .section-point
@@ -73,8 +100,20 @@ export default {
             .section-address
                 height 150px
                 background-color $color-background-fff
-                border-bottom 4PX solid #e89abe
                 padding 0 30px
+                position relative
+                &::before
+                    content: '';
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 4PX;
+                    position: absolute;
+                    background: -o-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
+                    background: -moz-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
+                    background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
+                    background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
+                    background-size: 250px;
                 .icon-font
                     font-size $font-size-30
                     color $color-text-B0B0B0
@@ -111,5 +150,34 @@ export default {
                     .icon-font
                         padding-left 15px
                         align-self center
-
+            .order-list
+                background-color $color-background-fff
+                margin-top 20px
+                padding 0 30px
+                .order-default
+                    height 75px
+                    display flex
+                    justify-content space-between
+                    align-items center
+                    .multiple
+                        color $color-text-868686
+            .section-pint
+                height 70px
+                line-height 70px
+                color $color-text-FB6334
+                font-size $font-size-12
+                padding-left 20px
+            .section-footer
+                margin-bottom 80px
+                margin-top 20px
+                background-color $color-background-fff
+                line-height 40px
+                padding 15px 25px
+                .section-footer-total
+                    color $color-text-868686
+                    span 
+                        color #000
+                .section-footer-pint
+                    color $color-text-FB6334
+                    font-size $font-size-10
 </style>
