@@ -16,7 +16,7 @@
                         </div>
                         <span  class="icon-shang-jian-to icon-font"></span>
                     </div>
-                    <tab-carts></tab-carts>
+                    <my-carts></my-carts>
                 </div>
                 <div class="trolley-popular">
                     <div class="trolley-popular-title">
@@ -26,17 +26,10 @@
                         <b class="diamond-icon"></b>
                         <i class="title-right"></i>
                     </div>
-                    <tab-list />
+                    <my-list />
                 </div>
             </section>
-        <footer class="trolley-footer">
-            <van-checkbox checked-color="#ff6e01" v-model="checked">全选</van-checkbox>
-            <div class="trolley-footer-total">
-                <p>合计：<span>¥0.00</span></p>
-                <p>不含运费</p>
-            </div>
-            <router-link to='/confirm-order' class="trolley-footer-button" >提交需求</router-link>
-        </footer>
+            <my-footer></my-footer>
         <tab-bar subscript='1'></tab-bar>
     </div>
 </template>
@@ -44,8 +37,9 @@
 <script>
 import TabBar from "@/components/Tabbar";
 import NavTab from "@/components/NavTab";
-import TabCarts from "./components/tabCarts";
-import TabList from "./components/tabList";
+import MyCarts from "./components/myCarts";
+import MyList from "./components/myList";
+import MyFooter from "./components/myFooter";
 import { Checkbox, CheckboxGroup } from 'vant';
 import { Toast } from 'mint-ui';
 // 请求api 封装请求
@@ -59,8 +53,9 @@ export default {
         [CheckboxGroup.name]:CheckboxGroup,
         TabBar,
         NavTab,
-        TabList,
-        TabCarts,
+        MyList,
+        MyCarts,
+        MyFooter,
     },
     data:()=>({
         wrapperHeight: 0,  // 页面总高
@@ -120,38 +115,6 @@ export default {
         .count-text
             margin 0 10px
             font-size 20px
-        .trolley-footer
-            position fixed
-            bottom 101px
-            left 0
-            height 80px
-            width 100%
-            display flex
-            align-items center
-            padding-left 20px
-            background $color-background-fff
-            .trolley-footer-total
-                flex 1
-                height 80px
-                display flex
-                justify-content center
-                flex-direction column
-                align-content space-around
-                align-items flex-end
-                padding-right 30px
-                &>p:first-child
-                    margin-bottom 15px
-                    span
-                        color $color-text-FB6334
-            .trolley-footer-button
-                flex 1
-                height 80px
-                display flex
-                justify-content center
-                align-items center
-                background-color $color-background-FB6334
-                color $color-text-ffffff
-                font-size 30px
         .trolley-main
             padding-top 110px
             .trolley-cart

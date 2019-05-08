@@ -18,10 +18,10 @@
                         <i class="icon-y-j-t icon-font"></i>
                     </div>
                 </div>
-                <div v-else class="add-address">
+                <router-link to='/address' v-else class="add-address">
                     <span class="add-address-text">请添加收货地址</span>
                     <i class="icon-y-j-t icon-font"></i>
-                </div>
+                </router-link>
             </div>
             <div class="order-list">
                 <div class="order-default">
@@ -58,11 +58,7 @@ export default {
     },
     data:()=>({
          wrapperHeight: 0,  // 页面总高
-         address:{
-             name:'cleaSource',
-             phone:'18397908189',
-             text:'广东省深圳市宝安区汇聚创新园405',
-             },
+         address:{},
     }),
     mounted(){
         // 计算高度

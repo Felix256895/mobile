@@ -1,5 +1,5 @@
 <template>
-  <ul class="tab-carts">
+  <ul class="my-carts">
     <li class="carts-list" v-for="item in list" :key="item">
       <div class="carts-item">
         <van-checkbox checked-color="#ff6e01" v-model="checked"/>
@@ -46,7 +46,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import '~@/common/stylus/variable';
-.tab-carts
+.my-carts
     background-color: $color-background-fff;
     .carts-list
         border-top 1PX solid #ddd

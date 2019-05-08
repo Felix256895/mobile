@@ -1,6 +1,6 @@
 <template>
-    <ul class="tab-list">
-        <li class="tab-list-item" v-for="item in list" :key="item">
+    <ul class="my-list">
+        <li class="my-list-item" v-for="item in list" :key="item">
             <div class="item-img">
                 <img src="@/assets/banner1.jpg" alt="">
             </div>
@@ -21,10 +21,10 @@
 </script>
 <style lang="stylus" scoped>
     @import "~@/common/stylus/variable" 
-    .tab-list
+    .my-list
         width 100%
         height 100%
-        .tab-list-item
+        .my-list-item
             display flex
             width 100%
             height 250px

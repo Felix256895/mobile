@@ -147,6 +147,17 @@ const router = new Router({
         require(["@/html/account/agreement/index"], resolve);
       }
     },
+    //地址
+    {
+      path: "/address",
+      name: "address",
+      meta: {
+        requireAuth: false
+      },
+      component: resolve => {
+        require(["@/html/address/index"], resolve);
+      }
+    },
   ]
 });
 

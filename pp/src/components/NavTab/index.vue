@@ -98,7 +98,7 @@ export default {
     width 100%
     top 0
     left 0 
-    z-index 100000000011
+    z-index 2000
     box-sizing border-box
     overflow hidden
     color #000
@@ -127,17 +127,18 @@ export default {
             .texts
                 font-size 25px
         .middle-wrap
+            height 100%
             display flex 
-            flex-grow 1    
+            flex 1    
             justify-content center
-            padding-left 200px
+            align-items center
             .text-s
                 font-size 35px
                 font-weight 490
         .right
             display flex
-            width 300px
-            height 100px
+            width 100px
+            height 100%
             justify-content:flex-end
             align-items center
             font-size 25px
