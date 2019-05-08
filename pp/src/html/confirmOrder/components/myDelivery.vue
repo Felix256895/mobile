@@ -4,7 +4,7 @@
             <li class="delivery-item" @click="show1 = true;">
                 <div>选择配送方式</div>
                 <div>
-                    <span>邦邦立达</span>
+                    <span>{{way}}</span>
                     <i class="icon-y-j-t icon-font"></i>
                 </div>
             </li>
@@ -27,22 +27,22 @@
                     <input class="delivery-item-input" type="text" placeholder="0币可用">
                 </div>
             </li>
-            <li class="delivery-item">
+            <li class="delivery-item" @click="show2 = true;">
                 <div>支付方式</div>
                 <div>
-                    <span>微信</span>
+                    <span>{{pay}}</span>
                     <i class="icon-y-j-t icon-font"></i>
                 </div>
             </li>
             <li class="delivery-item">
                 <van-checkbox checked-color="#ff6e01" v-model="invoice">开发票</van-checkbox>
-                <div>
+                <div class="delivery-online">
                     <i class="icon-y-j-t icon-font"></i>
                 </div>
             </li>
             <li class="delivery-item">
                 <van-checkbox checked-color="#ff6e01" v-model="reserve">预约配送</van-checkbox>
-                <div>
+                <div class="delivery-online">
                     <i class="icon-y-j-t icon-font"></i>
                 </div>
             </li>
@@ -50,14 +50,26 @@
         <div class="delivery-text">
             <textarea class="delivery-textarea" placeholder="备注信息" ></textarea>
         </div>
+        <!-- 配送方式 -->
         <van-popup v-model="show1" position="bottom">
-        <van-picker
-          show-toolbar
-          :columns="columns"
-          @confirm="show1 = false"
-          @cancel="show1 = false"
-        />
-      </van-popup>
+            <van-picker
+            show-toolbar
+            :columns="columns1"
+            @confirm="onConfirm1"
+            @cancel="show1 = false"
+            :item-height=30
+            />
+        </van-popup>
+        <!-- 支付方式 -->
+        <van-popup v-model="show2" position="bottom">
+            <van-picker
+            show-toolbar
+            :columns="columns2"
+            @confirm="onConfirm2"
+            @cancel="show2 = false"
+            :item-height=30
+            />
+        </van-popup>
     </div>
 </template>
 <script>
@@ -70,28 +82,33 @@ export default {
         [Popup.name]:Popup,
     },
     data:()=>({
-        columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+        columns1: ['自提', '邦邦立达'],
+        columns2: ['微信', '支付宝','货到付款','找人代付','钱包支付'],
+        way:'邦邦立达',
+        pay:'微信',
         invoice:true,
         reserve:true,
         show1: false,
+        show2: false,
     }),
+    methods:{
+        onConfirm1(value, index) {
+            this.way=value;
+            this.show1=false;
+            console.log(`当前值：${value}, 当前索引：${index}`);
+        },
+        onConfirm2(value, index) {
+            this.pay=value;
+            this.show2=false;
+            console.log(`当前值：${value}, 当前索引：${index}`);
+        },
+    },
 }
 </script>
 <style lang="stylus" >
     @import "~@/common/stylus/variable"
     .my-delivery
         background-color $color-background-fff
-        .van-checkbox
-            height 30px
-        .van-checkbox__icon
-            height 30px
-        .van-checkbox__icon
-        .van-checkbox__label
-            line-height 30px
-        .van-checkbox__icon .van-icon
-            width 30px
-            height 30px
-            font-size 24px
         .delivery-item
             height 75px
             display flex
@@ -104,6 +121,9 @@ export default {
                 padding-left 10px
             .delivery-item-input
                 width 100px
+            .delivery-online
+                flex 1
+                text-align right
         .delivery-text
             height 100px
             padding 20px 25px

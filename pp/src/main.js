@@ -8,7 +8,7 @@ import store from './store'          //  vuex 导出
 
 import 'lib-flexible/flexible.js'    //淘宝js px2rem
 import './common/stylus/index.styl'; //自定义
-import './common/stylus/mtin.styl';  //自定义框架css修改
+
 // 引入vue-amap
 import AMap from 'vue-amap';
 Vue.use(AMap);

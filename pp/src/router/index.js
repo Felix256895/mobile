@@ -100,7 +100,7 @@ const router = new Router({
         requireAuth: false
       },
       component: resolve => {
-        require(["@/html/trolley/confirmOrder/index"], resolve);
+        require(["@/html/confirmOrder/index"], resolve);
       }
     },
     //登录

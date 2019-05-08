@@ -120,17 +120,6 @@ export default {
         .count-text
             margin 0 10px
             font-size 20px
-        .van-checkbox
-            height 30px
-        .van-checkbox__icon
-            height 30px
-        .van-checkbox__icon
-        .van-checkbox__label
-            line-height 30px
-        .van-checkbox__icon .van-icon
-            width 30px
-            height 30px
-            font-size 24px
         .trolley-footer
             position fixed
             bottom 101px
