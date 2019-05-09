@@ -105,7 +105,7 @@ export default {
     },
 }
 </script>
-<style lang="stylus" >
+<style lang="stylus" scoped>
     @import "~@/common/stylus/variable"
     .my-delivery
         background-color $color-background-fff

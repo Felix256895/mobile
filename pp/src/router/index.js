@@ -158,6 +158,17 @@ const router = new Router({
         require(["@/html/address/index"], resolve);
       }
     },
+    //添加地址
+    {
+      path: "/add-address",
+      name: "add-address",
+      meta: {
+        requireAuth: false
+      },
+      component: resolve => {
+        require(["@/html/address/addAddress/index"], resolve);
+      }
+    },
   ]
 });
 

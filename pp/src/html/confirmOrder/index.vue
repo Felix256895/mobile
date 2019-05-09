@@ -99,17 +99,17 @@ export default {
                 padding 0 30px
                 position relative
                 &::before
-                    content: '';
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    height: 4PX;
-                    position: absolute;
-                    background: -o-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
-                    background: -moz-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
-                    background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
-                    background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%);
-                    background-size: 250px;
+                    content ''
+                    left 0
+                    right 0
+                    bottom 0
+                    height 4PX
+                    position absolute
+                    background -o-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%)
+                    background -moz-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%)
+                    background -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%)
+                    background repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #868686 0, #868686 45%, transparent 0, transparent 50%)
+                    background-size 250px
                 .icon-font
                     font-size $font-size-30
                     color $color-text-B0B0B0

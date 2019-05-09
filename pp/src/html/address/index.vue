@@ -5,17 +5,21 @@
             color='#000'
             title='我的收货地址'
             ></nav-tab>
-
+        <section class="address-section">
+            <my-list></my-list>
+        </section>
         <my-footer></my-footer> 
     </div>
 </template>
 <script>
 import NavTab from "@/components/NavTab";
 import MyFooter from './components/myFooter';
+import MyList from './components/myList';
 export default {
     components:{
         NavTab,
         MyFooter,
+        MyList,
     },
     data:()=>({
          wrapperHeight: 0,  // 页面总高
@@ -44,4 +48,6 @@ export default {
             display none 
         &::-ms-scrollbar 
             display none  
+        .address-section
+            padding-top 110px
 </style>
