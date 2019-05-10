@@ -5,21 +5,21 @@
         <div class="left">
             <slot name="left">
                <div @click="LeftBtn">
-                    <i class="icon-z-j-t icon-font"></i> 
+                    <i :class="leftIcon+' icon-font'" :style="{color:color}"></i> 
                </div>  
             </slot>    
         </div>
         <!-- 中间 -->
         <div class="middle-wrap">
             <slot name="middle">   
-                <div class="text-s" style="">{{title}}</div>
+                <div class="text-s" style="" :style="{color:color}" >{{title}}</div>
             </slot>  
         </div>
         <!-- 右 -->
         <div class="right">
             <slot name="right">
                 <div @click="btnIcon">
-                    <i v-if="rightIcon" :class="rightIcon" class="iocns"></i> 
+                    <i v-if="rightIcon" :class="rightIcon+' icon-font'" :style="{color:color}" ></i> 
                 </div>
                 <div @click="btnText" v-if="tel=='1'">
                     <a href="tel:020 8852 5087">
@@ -69,7 +69,11 @@ export default {
         tel:{
           type: String,
           default:'0'
-        }
+        },
+        color:{
+            type:String,
+            default:'#000'
+        },
     },
     components:{
 
@@ -94,10 +98,14 @@ export default {
     width 100%
     top 0
     left 0 
-    z-index 100000000011
+    z-index 2000
     box-sizing border-box
     overflow hidden
     color #000
+    .icon-font
+        font-size 47px
+        // font-weight bold 
+        position relative
     .wrap
         display flex
         flex-direction row
@@ -118,22 +126,19 @@ export default {
             padding-left 10px
             .texts
                 font-size 25px
-            .icon-font
-                font-size 47px
-                font-weight bold 
-                position relative
         .middle-wrap
+            height 100%
             display flex 
-            flex-grow 1    
+            flex 1    
             justify-content center
-            padding-left 200px
+            align-items center
             .text-s
                 font-size 35px
                 font-weight 490
         .right
             display flex
-            width 300px
-            height 100px
+            width 100px
+            height 100%
             justify-content:flex-end
             align-items center
             font-size 25px
@@ -145,5 +150,6 @@ export default {
                 font-size 40px 
                 margin-right 25px
             .text-1
-                color $color-text-FB6334  
+                color $color-text-FB6334 
+                font-size $font-size-30 
 </style>

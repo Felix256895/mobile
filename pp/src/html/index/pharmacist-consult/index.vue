@@ -4,6 +4,7 @@
         <nav-tab title="药师咨询"
         rightText="一键拨号"
         tel="1"
+        leftIcon='icon-z-j-t'
         ></nav-tab>
         <div class="consultTop" :style="{ height: wrapperHeight + 'px' }">
             <div class="box"  v-for="(v,index) in list" :key="index">

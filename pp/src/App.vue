@@ -38,6 +38,6 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
     @import 'vant/lib/index.css' 
     @import 'mint-ui/lib/style.css' 
-
+    @import '~@/common/stylus/mtin.styl';  //自定义框架css修改';
 
 </style>
