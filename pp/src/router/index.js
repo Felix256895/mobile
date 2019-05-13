@@ -90,7 +90,7 @@ const router = new Router({
       },
       component: resolve => {
         require(["@/html/order/index"], resolve);
-      }
+      },
     },
     //确认订单
     {
@@ -101,7 +101,7 @@ const router = new Router({
       },
       component: resolve => {
         require(["@/html/confirmOrder/index"], resolve);
-      }
+      },
     },
     //登录
     {
@@ -168,6 +168,17 @@ const router = new Router({
       component: resolve => {
         require(["@/html/address/addAddress/index"], resolve);
       }
+    },
+    //订单详情
+    {
+      path: "/order-detail",
+      name: "order-detail",
+      meta: {
+        requireAuth: false
+      },
+      component: resolve => {
+        require(["@/html/order/orderDetail/index"], resolve);
+      },
     },
   ]
 });
