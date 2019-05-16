@@ -47,6 +47,9 @@ export default {
         };
         this.wrapperHeight =`${document.documentElement.clientHeight}`- this.$refs.wrapper.getBoundingClientRect().top;
    },
+   beforeMount(){
+       this.active=this.$route.query.id;
+   },
    methods:{
        handleClick(index,title){
         //    this.index=index;
