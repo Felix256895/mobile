@@ -43,7 +43,7 @@ export default {
     },
     methods:{
         handleClick(){
-            this.$router.push('/order/order-detail');
+            this.$router.push('/order-detail');
         }
     }
 }

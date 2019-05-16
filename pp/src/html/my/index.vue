@@ -13,7 +13,7 @@
             </div>
             <router-link to='/login' class="my-login" >登录 / 注册</router-link>
         </div>
-        <div class="my-order" @click='handleOrder'>
+        <div class="my-order" @click='handleOrder(0)'>
             <span>我的购药订单</span>
             <a >
                 查看全部订单
@@ -21,7 +21,7 @@
             </a>
         </div>
         <ul class="my-order-list"  >
-            <li class="my-order-item" v-for="(item,index) in list" :key="index" >
+            <li class="my-order-item" v-for="item in list" :key="item.id" @click="handleOrder(item.id)">
                 <p :class="item.icon+' icon-font'" ></p>
                 <p>{{item.name}}</p>
             </li>
@@ -83,25 +83,29 @@ export default {
                     icon:'icon-dai-fu-kuai',
                     to:'/order',
                     name:'待付款',
-                    ts:false
+                    ts:false,
+                    id:1,
                 },
                 {
                     icon:'icon-dai-fa-huo',
                     to:'/order',
                     name:'待发货',
-                    ts:false
+                    ts:false,
+                    id:2,
                 },
                 {
                     icon:'icon-dai-sho-huo',
                     to:'/order',
                     name:'待收货',
-                    ts:false
+                    ts:false,
+                    id:3,
                 },
                 {
                     icon:'icon-ping-jia-1',
                     to:'/order',
                     name:'待评价',
-                    ts:false
+                    ts:false,
+                    id:4,
                 },
             ],
         infos:[
@@ -177,9 +181,12 @@ export default {
         upload(){
 
         },
-        handleOrder(){
+        handleOrder(id){
             this.$router.push({
-                path: '/order'
+                path: '/order',
+                query: {
+                  id: id
+                }
             });
         },
         handlePath(e){
