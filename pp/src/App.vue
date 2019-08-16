@@ -9,15 +9,22 @@
 </template>
 <script>
 import { Dialog } from 'vant';
+import { setTimeout } from 'timers';
 export default {
     name: 'App',
     data:()=>({
         isRouterAlive:true,
+        apione:'',
     }),
     mounted() {
+        this.a.v(this);
+        this.a.apione();
         document.body.addEventListener('focusout', function () {
             window.scrollTo(0,0);
         });
+        setTimeout(()=>{
+            console.log(this.apione);
+        },3000)
     },
     provide (){
         return {

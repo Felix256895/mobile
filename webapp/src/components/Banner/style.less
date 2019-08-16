@@ -1,0 +1,47 @@
+@import '~@/style/mixin.less';
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    background: url("https://www.dpfile.com/app/app-m-module/static/666419d6641cf0faec444fc12b50383d.jpg") no-repeat;
+    background-size: 100% 100%;
+    border-bottom: 1PX solid #e1e1e1;
+    .banner__title{
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        margin: 24px 0 14px;
+        .banner__logo{
+            width: 30px;
+            height: 30px;
+            background: url('../../assets/images/logo.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        .banner__text{
+            color:#111;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+    .banner__btns{
+        display: flex;
+        justify-content: center;
+        .banner__btn{
+            display: flex;
+            width: 126px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            border:1px solid @base-background;
+            font-size: 14px;
+            border-radius: 2PX;
+            color:@base-background;
+        }
+        .banner__btn__bg{
+            margin-left: 15px;
+            color:#fff;
+            background-color: @base-background;
+        }
+    }
+}

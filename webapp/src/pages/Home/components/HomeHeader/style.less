@@ -1,0 +1,107 @@
+
+@import '~@/style/mixin.less';
+
+.homeHeader{
+    &::after{
+        display: block;
+        height: 50px;
+        content: '';
+    }
+}
+.homeHeader__wrapper{
+    .wh(100%,50px);
+    position: fixed;
+    display: flex;
+    line-height: 50px;
+    background-color: @base-background;
+    padding: 0 10px;
+    align-items: center;
+    z-index: 1024;
+}
+.homeHeader__city{
+    position: relative;
+    display: flex;
+    max-width: 60px;
+    color:#fff;
+    .nowrapEllipsis();
+    padding-right: 17px;
+}
+.homeHeader__city::after{
+    position: absolute;
+    content:'';
+    border: 1PX solid #fff;
+    top:50%;
+    right: 2px;
+    margin-top: -8px;
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-top:none;
+    border-right: none;
+    transform: rotate(-45deg);
+}
+.homeHeader__search{
+    flex-grow: 1;
+    display: flex;
+    background-color: #fff;
+    height: 30px;
+    border-radius: 25px;
+    align-items: center;
+    margin: 0 6px 0 9px;
+    position: relative;
+    padding-left: 30px;
+    .font(13px,#b8b8b8);
+}
+.homeHeader__search::before{
+    position: absolute;
+    display: block;
+    content:'';
+    .wh(8px,8px);
+    border:1PX solid #888;
+    border-radius: 11px;
+    left: 12px;
+    bottom: 12px;
+}
+.homeHeader__search::after{
+    position: absolute;
+    display: block;
+    content:'';
+    border-top:1px solid #888;
+    border-radius: 9px;
+    .wh(6px,0);
+    left: 19px;
+    bottom: 11px;
+    transform: rotate(45deg);
+}
+.homeHeader__self{
+    .flex();
+    .wh(28px,100%);
+}
+.homeHeader__portrait{
+   .wh(22px,22px);
+    border: 1PX solid #fff;
+    border-radius: 17px;
+    position: relative;
+    overflow: hidden;
+}
+.homeHeader__portrait::before{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border:1PX solid #fff;
+    border-radius: 5px;
+    right: 5px;
+    top:3px;
+}
+.homeHeader__portrait::after{
+    position: absolute;
+    display: block;
+    content: '';
+    .wh(16px,16px);
+    border:1PX solid #fff;
+    border-radius: 10px;
+    right: 1px;
+    top:12px;
+}
