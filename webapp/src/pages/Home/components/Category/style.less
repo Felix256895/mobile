@@ -1,0 +1,32 @@
+@import '~@/style/mixin.less';
+.category{
+    border-bottom: 1PX solid #e1e1e1;
+    text-align: center;
+    color:#333;
+    background-color: #fff;
+    .cateory__section{
+        width: 20%;
+        float: left;
+        padding-top: 13px;
+        font-size: 13px;
+        text-align: center;
+    }
+    .category__icon{
+        width: 44px;
+        height: 44px;
+        margin: 0 auto 3PX;
+    }
+    .category__text{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+    }
+}
+:global{
+    .slick-dots{
+        position: static;
+    }
+    .slick-dots li.slick-active button:before{
+        color:@base-red;
+    }
+}

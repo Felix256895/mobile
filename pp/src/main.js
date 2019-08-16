@@ -5,6 +5,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'          //  vuex 导出
+import axios from 'axios';
+import a from './utils/myaxios';
 
 import 'lib-flexible/flexible.js'    //淘宝js px2rem
 import './common/stylus/index.styl'; //自定义
@@ -12,7 +14,12 @@ import './common/stylus/index.styl'; //自定义
 // 引入vue-amap
 import AMap from 'vue-amap';
 Vue.use(AMap);
- 
+
+
+axios.defaults.baseURL='https://randomuser.me/';
+//
+Vue.prototype.a=a([{name:'apione',url:'./api2/'}]);
+
 // 初始化vue-amap
 AMap.initAMapApiLoader({
   // 高德的key
