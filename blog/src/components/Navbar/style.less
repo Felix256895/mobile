@@ -1,0 +1,123 @@
+@import '~@/assets/style/mixin.less';
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    height: 3.6rem;
+    line-height: 2.2rem;
+    padding: .7rem 1.5rem;
+    border-bottom: 1px solid @border-color;
+    background: @white;
+    box-sizing: border-box;
+}
+
+.navbae__slider{
+    display: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+    padding:.6rem;
+    top:.6rem;
+    left: 1rem;
+}
+.icon{
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+}
+.navbar__left {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.navbar__right {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.7rem;
+    display: flex;
+}
+
+.navbar__input {
+    margin-right: 1rem;
+    background-color: @white;
+    input {
+        border: none;
+        outline: none;
+        display: inline-block;
+        width: 10rem;
+        line-height: 2rem;
+        border-radius: 2rem;
+        font-size: .9rem;
+        padding: 0 .5rem 0 2rem;
+        transition: all .2s ease;
+        border: 1px solid #cfd4db;
+        background: url("../../assets/images/search.svg") .6rem .5rem no-repeat;
+        background-size: 1rem;
+        color: @base-color;
+        &:focus{
+            border-color:@active-color;
+        }
+    }
+}
+
+.navbar__link {
+    display: flex;
+
+    .navbar__link__item {
+
+        &:nth-child(2) a::after,
+        &:nth-child(3) a::after {
+            position: absolute;
+            content: '';
+            background: url("../../assets/images/link.svg") no-repeat;
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+            background-size: 1rem;
+            margin-top: .5rem;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        margin-left: 1.5rem;
+        line-height: 2rem;
+        margin-right: 1rem;
+        :global{
+            .active{
+                border-bottom: 2px solid @active-color;
+            }
+        }
+    }
+
+    a:hover {
+        border-bottom: 2px solid @active-color;
+    }
+}
+
+@media screen and (max-width: @screen-md){
+    .navbar{
+        padding-left: 4rem;
+    }
+    .navbae__slider{
+        display: block;
+    }
+   .navbar__link{
+    display: none;
+   }
+   .navbar__input>input{
+       width: 0;
+       position: relative;
+       left: 1rem;
+       border-color:transparent;
+       cursor: pointer;
+   }
+   .navbar__input>input:focus{
+       width: 8rem;
+       border-color:@active-color;
+   }
+}
